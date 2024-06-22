@@ -1,0 +1,137 @@
+.container{
+    background: url("https://r-xx.bstatic.com/xdata/images/xphoto/2880x868/346457038.jpeg?k=7cac75d50b046a991ab7993e9cac89d451d4cc371f108d0fe89d84ba1fc85f19&o=");
+    z-index: -1;
+    color:white;
+    min-height: 50vh;
+    width: 100%;
+    object-fit: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    padding: 5rem 2rem;
+    margin-bottom: 10vh;
+}
+
+.title{
+    font-size: 56px;
+    font-weight: bolder;
+}
+
+.content{
+    margin: 0 10%;
+}
+
+.button{
+    border:1px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bolder;
+    border-radius: 5px;
+    background-color:#0e45c5;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: #544ce7;
+}
+
+.inputs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem
+}
+
+.results{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem
+}
+
+.card{
+    min-height: 50vh;
+    width: 85%;
+    border:2px solid rgb(136, 130, 130);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+    gap: 1rem
+}
+
+.overview{
+    flex: 1;
+}
+
+.details{
+    flex: 2;
+}
+
+
+.img{
+    border-radius: 5%;
+}
+
+@media screen and (max-width: 768px) {
+    
+.container{
+    background: url("https://r-xx.bstatic.com/xdata/images/xphoto/2880x868/346457038.jpeg?k=7cac75d50b046a991ab7993e9cac89d451d4cc371f108d0fe89d84ba1fc85f19&o=");
+    z-index: -1;
+    color:white;
+    min-height: 75vh;
+    width: 100%;
+    object-fit: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter:brightness(100%);
+    
+}
+.title{
+    font-size: 46px;
+    font-weight: bolder;
+}
+
+.content{
+    margin: 0 5%;
+}
+
+.inputs{
+    flex-direction: column;
+}
+
+
+.results{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem
+}
+
+.card{
+    width:90%;
+    min-height: 40vh;
+    border:1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 20px;
+}
+.img{
+    width:400px;
+    
+}
+
+}
