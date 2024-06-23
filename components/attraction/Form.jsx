@@ -1,5 +1,6 @@
 import Input from '@/components/input/Input.jsx';
 import styles from '@/app/attraction/page.module.css';
+import {getCoordinates, getAttractions} from '@/lib/actions';
 
 const ClientForm = ({ setLoading, setPlaces }) => {
     const handleSubmit = async (e) => {
@@ -8,11 +9,10 @@ const ClientForm = ({ setLoading, setPlaces }) => {
         const formData = new FormData(e.target);
         const attraction = formData.get('attraction');
         
-        // Fetch places data (assuming there's an API endpoint for this)
-        const response = await fetch(`/api/places?attraction=${attraction}`);
-        const data = await response.json();
+        const coordinates = await getCoordinates(attraction);
+        const data = await getAttractions(coordinates.latitude,coordinates.longitude);
         
-        setPlaces(data.places);
+        setPlaces(data.data);
         setLoading(false);
     };
 
