@@ -18,7 +18,7 @@
     .ul{
         display: flex;
         align-items: center;
-        justify-content:space-evenly;
+        justify-content:space-between;
     }
     
     .li {
@@ -79,6 +79,9 @@
 
         .mobile{
             background-color:#0e45c5;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
         }
 
         .li{
