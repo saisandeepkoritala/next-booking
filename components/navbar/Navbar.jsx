@@ -13,14 +13,15 @@ const Navbar = () => {
                 <li className={styles.li}>
                     <Link href="/">Stays</Link>
                 </li>
-                <li className={styles.li}>
+                {/* <li className={styles.li}>
                     <Link href="/flights">Flights</Link>
-                </li>
+                </li> */}
                 <li className={styles.li}>
                     <Link href="/cars">Cars</Link>
                 </li>
             </ul>
-            <div className={styles.div} onClick={()=>setOpenMenu(!openMenu)}>
+            <div className={styles.div} onClick={()=>{
+                setOpenMenu(!openMenu)}}>
                 <span className={styles.span}></span>
                 <span className={styles.span}></span>
                 <span className={styles.span}></span>

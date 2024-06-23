@@ -1,0 +1,11 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around
+}
+
+.tag{
+    color:#0e45c5;
+    font-weight: 700;
+    text-align: center
+}

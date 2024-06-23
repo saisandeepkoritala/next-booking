@@ -2,7 +2,7 @@
 import styles from "./page.module.css";
 import Input from "@/components/input/Input";
 import Datepicker from "@/components/datepicker/Datepicker";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { handleSubmit } from "@/lib/actions";
 import HotelDetails from "@/components/hoteldetails/HotelDetails";
 import Link from "next/link";
@@ -17,6 +17,21 @@ const Home = () => {
 
     const [hotels, setHotels] = useState([]);
     const [loading, setLoading] = useState(false);
+
+    useEffect(()=>{
+        const defaultData=async()=>{
+            const formData = new FormData();
+            formData.append("search", "Dallas");
+            formData.append("Check_in",Date.now() + 86400000);
+            formData.append("Check_out",Date.now() + 86400000 * 2);
+            const hotelsData = await handleSubmit(formData);
+            setHotels(hotelsData?.Hotels?.result);
+            dispatch(setAllHotels(hotelsData?.Hotels?.result));
+            console.log(hotelsData.Hotels.result);
+        }
+
+        defaultData();
+    },[])
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -40,14 +55,14 @@ const Home = () => {
                 <button className={styles.button}>Find yours</button>
             </div>
             <form className={styles.inputs} onSubmit={handleFormSubmit}>
-                <Input />
+                <Input placeholder="Dallas" name="search"/>
                 <Datepicker selectedDate={date1} onDateChange={setDate1} placeholder="Check_in"/>
                 <Datepicker selectedDate={date2} onDateChange={setDate2} placeholder="Check_out"/>
                 <button className={styles.button} type="submit">Search</button>
             </form>
         </div>
         <div className={styles.results}>
-                {hotels.map((hotel)=>{
+                {hotels?.map((hotel)=>{
                     const imgsrc = hotel.main_photo_url.replace("square60","square300");
                     return <Link key={hotel.hotel_id} className={styles.card} 
                     href={{

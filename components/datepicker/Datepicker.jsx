@@ -1,9 +1,17 @@
-"use client"; 
+"use client";
 import React from 'react';
 
 const Datepicker = ({ selectedDate, onDateChange, placeholder }) => {
     const handleChange = (e) => {
         onDateChange(e.target.value); 
+    };
+
+    const getCurrentDate = () => {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
     };
 
     return (
@@ -32,6 +40,7 @@ const Datepicker = ({ selectedDate, onDateChange, placeholder }) => {
                 value={selectedDate}
                 onChange={handleChange}
                 name={placeholder}
+                min={getCurrentDate()}
             />
         </div>
     );

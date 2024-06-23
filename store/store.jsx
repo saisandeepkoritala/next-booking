@@ -7,6 +7,7 @@ const initialState = {
     allHotels:[],
     savedHotels:[],
     selectedHotel:[],
+    allCars:[],
 };
 
 const counterSlice = createSlice({
@@ -21,11 +22,14 @@ const counterSlice = createSlice({
         },
         setSelectedHotel(state, action) {
             state.selectedHotel = action.payload;
+        },
+        setAllCars(state, action) {
+            state.allCars = action.payload;
         }
     },
 });
 
-export const { setSelectedHotelId, setAllHotels ,setSelectedHotel} = counterSlice.actions;
+export const { setSelectedHotelId, setAllHotels ,setSelectedHotel,setAllCars} = counterSlice.actions;
 
 export const store = configureStore({
     reducer: {

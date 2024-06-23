@@ -1,0 +1,79 @@
+.cars{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button{
+    border:1px solid black;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-color:#0e45c5;
+    color: white;
+    min-width: 250px;
+    width:20%;
+}
+
+.button:hover{  
+    background-color: #426ed4;  
+    color: white;
+}
+
+.carContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.car{
+    border:2px solid #426ed4;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 10px 15px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    .cars{
+        flex-direction: column;
+        width:100%;
+        align-items: center;
+    }
+    
+.car{
+    border:2px solid #426ed4;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-weight: 400;
+    cursor: pointer;
+    margin: 10px 15px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.tag{
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+.tagPrice{
+    font-size: 0.85rem;
+    color:green;
+    font-weight: 700;
+}
+
+}
