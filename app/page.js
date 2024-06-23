@@ -20,7 +20,7 @@ const Home = () => {
 
     useEffect(() => {
         if (loading === false) {
-            const scrollPosition = window.innerHeight * 1.25;
+            const scrollPosition = window.innerHeight * 1;
             window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
         }
     }, [loading]);
