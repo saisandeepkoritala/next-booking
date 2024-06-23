@@ -41,7 +41,12 @@ const Cars = () => {
         getDefaultCars();
     }, []);
 
-
+    useEffect(() => {
+        if (isLoading === false) {
+            const scrollPosition = window.innerHeight * 0.5;
+            window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+        }
+    }, [isLoading]);
     const handleSubmit = async(event) => {
         setIsLoading(true);
         event.preventDefault();
@@ -62,13 +67,13 @@ const Cars = () => {
         <>
         <form className={styles.cars} onSubmit={handleSubmit}>
             <div>
-                <h2>Pick up</h2>
+                <h2 className={styles.h2}>Pick up</h2>
                 <Input placeholder="Dallas" name="pickupLocation" />
                 <Datepicker selectedDate={date1} onDateChange={setDate1} placeholder="pickupDate" name="pickupDate" />
                 <Time name="pickupTime" />
             </div>
             <div>
-                <h2>Drop off</h2>
+                <h2 className={styles.h2}>Drop off</h2>
                 <Input placeholder="Austin" name="dropoffLocation" />
                 <Datepicker selectedDate={date2} onDateChange={setDate2} placeholder="dropoffDate" name="dropoffDate" />
                 <Time name="dropoffTime" />

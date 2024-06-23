@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./hoteldetails.module.css";
 
 const HotelDetails = ({hotel}) => {
-    console.log(hotel);
+    
     return (
         <div className={styles.details}>
             <div className={styles.header}>

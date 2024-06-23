@@ -13,9 +13,9 @@ const Navbar = () => {
                 <li className={styles.li}>
                     <Link href="/">Stays</Link>
                 </li>
-                {/* <li className={styles.li}>
-                    <Link href="/flights">Flights</Link>
-                </li> */}
+                <li className={styles.li}>
+                    <Link href="/attraction">Attraction</Link>
+                </li>
                 <li className={styles.li}>
                     <Link href="/cars">Cars</Link>
                 </li>
@@ -31,9 +31,9 @@ const Navbar = () => {
                     <li className={styles.li}>
                         <Link href="/" onClick={() => setOpenMenu(false)} className={styles.link}>Stays</Link>
                     </li>
-                    {/* <li className={styles.li}>
-                        <Link href="/flights" onClick={() => setOpenMenu(false)} className={styles.link}>Flights</Link>
-                    </li> */}
+                    <li className={styles.li}>
+                        <Link href="/attraction" onClick={() => setOpenMenu(false)} className={styles.link}>Attraction</Link>
+                    </li>
                     <li className={styles.li}>
                         <Link href="/cars" onClick={() => setOpenMenu(false)} className={styles.link}>Cars</Link>
                     </li>

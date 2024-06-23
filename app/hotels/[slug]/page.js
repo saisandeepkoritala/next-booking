@@ -15,14 +15,13 @@ const HotelPage = ({ params }) => {
         dispatch(setSelectedHotelId(params.slug))
     },[params.slug])
 
+
     const allHotels = useSelector((state) => state.user.allHotels);
     
     const hotel = allHotels.find((hotel) => Number(hotel.hotel_id) === Number(params.slug));
 
-    console.log(hotel);
 
     const imgsrc = hotel?.main_photo_url?.replace("square60","1440x600");
-    console.log(hotel?.checkin?.from)
     return (
         <div>
             <img src={imgsrc} alt="image"/>

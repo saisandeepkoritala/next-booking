@@ -18,7 +18,15 @@ const Home = () => {
     const [hotels, setHotels] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
+        if (loading === false) {
+            const scrollPosition = window.innerHeight * 1.25;
+            window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+        }
+    }, [loading]);
+
     useEffect(()=>{
+        setLoading(true);
         const defaultData=async()=>{
             const formData = new FormData();
             formData.append("search", "Dallas");
@@ -27,10 +35,10 @@ const Home = () => {
             const hotelsData = await handleSubmit(formData);
             setHotels(hotelsData?.Hotels?.result);
             dispatch(setAllHotels(hotelsData?.Hotels?.result));
-            console.log(hotelsData.Hotels.result);
         }
 
         defaultData();
+        setLoading(false);
     },[])
 
     const handleFormSubmit = async (event) => {
